@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InsureCare | Insurance Policy Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">✚</span>
+            Insure<span>Care</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#policies">Insurance Plans</a>
+            <a href="#about">About Us</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="btn btn-outline" id="loginBtn" type="button">
+                Login
+            </button>
+
+            <button class="btn btn-primary" id="registerBtn" type="button">
+                Register
+            </button>
+        </div>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+    </header>
+
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="eyebrow">YOUR FUTURE, PROTECTED</span>
+
+                <h1>
+                    Protect What Matters
+                    <span>Most to You.</span>
+                </h1>
+
+                <p>
+                    Explore insurance plans designed to protect your health,
+                    vehicle, and family. Find a plan that suits your needs
+                    and budget.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#policies" class="btn btn-primary btn-large">
+                        Explore Plans →
+                    </a>
+
+                    <a href="#about" class="btn btn-outline btn-large">
+                        Learn More
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>3</strong>
+                        <span>Insurance Categories</span>
+                    </div>
+
+                    <div>
+                        <strong>6</strong>
+                        <span>Available Plans</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Online Access</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Insurance protection illustration">
+                <div class="visual-circle">
+                    <div class="shield">✓</div>
+                    <div class="floating-card floating-card-top">
+                        <span>✓</span>
+                        Protection first
+                    </div>
+                    <div class="floating-card floating-card-bottom">
+                        <span>♥</span>
+                        Your family matters
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Insurance Policies -->
+        <section class="policies-section section" id="policies">
+            <div class="section-heading">
+                <span class="eyebrow">OUR INSURANCE SOLUTIONS</span>
+                <h2>Find the Right Insurance Plan</h2>
+                <p>
+                    Compare our sample plans and choose the protection
+                    that fits your requirements.
+                </p>
+            </div>
+
+            <!-- Search and Filters -->
+            <div class="policy-toolbar">
+                <div class="filter-buttons" id="filterButtons">
+                    <button
+                        class="filter-btn active"
+                        type="button"
+                        data-category="All"
+                        aria-pressed="true"
+                    >
+                        All Plans
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        type="button"
+                        data-category="Health"
+                        aria-pressed="false"
+                    >
+                        Health
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        type="button"
+                        data-category="Vehicle"
+                        aria-pressed="false"
+                    >
+                        Vehicle
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        type="button"
+                        data-category="Life"
+                        aria-pressed="false"
+                    >
+                        Life
+                    </button>
+                </div>
+
+                <label class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search insurance plans..."
+                        aria-label="Search insurance plans"
+                    >
+                </label>
+            </div>
+
+            <!-- Cards are inserted here by JavaScript -->
+            <div class="policy-grid" id="policyGrid"></div>
+
+            <p class="empty-message" id="emptyMessage" hidden>
+                No plans found. Try another search or category.
+            </p>
+        </section>
+
+
+        <!-- Selected Plan -->
+        <section class="selected-section section" id="selectedSection">
+            <div class="selected-card">
+                <div class="selected-icon">✓</div>
+
+                <div class="selected-content">
+                    <span class="eyebrow">YOUR CHOICE</span>
+                    <h2>Selected Insurance Plan</h2>
+                    <p id="selectedPlanText" aria-live="polite">
+                        You have not selected a plan yet.
+                    </p>
+                </div>
+
+                <button
+                    class="btn btn-outline"
+                    id="clearSelectionBtn"
+                    type="button"
+                    hidden
+                >
+                    Clear Selection
+                </button>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about-section section" id="about">
+            <div class="about-content">
+                <span class="eyebrow">ABOUT INSURECARE</span>
+                <h2>Making Insurance Easier to Understand</h2>
+
+                <p>
+                    InsureCare is a demonstration insurance policy management
+                    website that helps users explore different types of
+                    insurance plans through a simple interface.
+                </p>
+
+                <p>
+                    Browse plans, compare their sample benefits, and select
+                    an option to see how an online insurance portal can work.
+                </p>
+            </div>
+
+            <div class="about-features">
+                <div class="feature-item">
+                    <span class="feature-icon">♡</span>
+                    <div>
+                        <h3>Health Protection</h3>
+                        <p>Explore sample plans for medical expenses.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">⌁</span>
+                    <div>
+                        <h3>Vehicle Protection</h3>
+                        <p>Explore sample coverage for vehicles.</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <span class="feature-icon">♧</span>
+                    <div>
+                        <h3>Family Protection</h3>
+                        <p>Explore sample life insurance plans.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="#home" class="logo footer-logo">
+            <span class="logo-icon">✚</span>
+            Insure<span>Care</span>
+        </a>
+
+        <p>
+            © <span id="currentYear"></span> InsureCare.
+            Educational demonstration project.
+        </p>
+
+        <a href="#home">Back to top ↑</a>
+    </footer>
+
+
+    <!-- Login and Register Modal -->
+    <div
+        class="modal"
+        id="authModal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+    >
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+
+        <div class="modal-content">
+            <button
+                class="modal-close"
+                id="closeModalBtn"
+                type="button"
+                aria-label="Close dialog"
+            >
+                &times;
+            </button>
+
+            <div class="modal-brand">
+                <span class="logo-icon">✚</span>
+                Insure<span>Care</span>
+            </div>
+
+            <h2 id="modalTitle">Welcome Back!</h2>
+
+            <p class="modal-description" id="modalDescription">
+                Log in to continue.
+            </p>
+
+            <div class="auth-tabs">
+                <button
+                    class="auth-tab active"
+                    id="loginTab"
+                    type="button"
+                    aria-selected="true"
+                >
+                    Login
+                </button>
+
+                <button
+                    class="auth-tab"
+                    id="registerTab"
+                    type="button"
+                    aria-selected="false"
+                >
+                    Register
+                </button>
+            </div>
+
+            <form id="authForm" novalidate>
+                <div class="form-group" id="nameGroup" hidden>
+                    <label for="nameInput">Full Name</label>
+                    <input
+                        type="text"
+                        id="nameInput"
+                        name="name"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                    >
+                    <small class="field-error" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailInput">Email Address</label>
+                    <input
+                        type="email"
+                        id="emailInput"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+                    <small class="field-error" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordInput">Password</label>
+                    <input
+                        type="password"
+                        id="passwordInput"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+                    <small class="field-error" id="passwordError"></small>
+                </div>
+
+                <button
+                    class="btn btn-primary auth-submit"
+                    id="authSubmitBtn"
+                    type="submit"
+                >
+                    Login
+                </button>
+            </form>
+
+            <p class="auth-switch-text" id="authSwitchText">
+                Don't have an account?
+                <button id="switchToRegister" type="button">
+                    Register
+                </button>
+            </p>
+
+            <p
+                class="auth-message"
+                id="authMessage"
+                aria-live="polite"
+            ></p>
+
+         
+        </div>
+    </div>
+
+
+    <!-- Plan Details Modal -->
+    <div
+        class="modal"
+        id="detailsModal"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="detailsTitle"
+    >
+        <div class="modal-backdrop" id="detailsBackdrop"></div>
+
+        <div class="modal-content details-content">
+            <button
+                class="modal-close"
+                id="closeDetailsBtn"
+                type="button"
+                aria-label="Close plan details"
+            >
+                &times;
+            </button>
+
+            <span class="eyebrow" id="detailsCategory">INSURANCE PLAN</span>
+
+            <h2 id="detailsTitle">Plan Name</h2>
+
+            <p class="details-price" id="detailsPrice"></p>
+
+            <p class="details-description" id="detailsDescription"></p>
+
+            <h3>Plan Highlights</h3>
+
+            <ul class="details-benefits" id="detailsBenefits"></ul>
+
+            <p class="disclaimer">
+                Sample plan information for educational purposes only.
+                Actual premiums, benefits, exclusions, and eligibility may differ.
+            </p>
+
+            <button
+                class="btn btn-primary auth-submit"
+                id="detailsSelectBtn"
+                type="button"
+            >
+                Select This Plan
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Toast Notification -->
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    ></div>
+
+</body>
+</html>
